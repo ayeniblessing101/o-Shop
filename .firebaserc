@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "blessing-oshop"
+  },
+  "targets": {
+    "blessing-oshop": {
+      "hosting": {
+        "oshop": [
+          "blessing-oshop"
+        ]
+      }
+    }
   }
 }
