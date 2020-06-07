@@ -12,6 +12,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { environment } from './../environments/environment';
 
 import { faStore } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { faStore } from '@fortawesome/free-solid-svg-icons';
     NgbDropdownModule,
     NgbModule
   ],
-  providers: [],
+  providers: [ AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
