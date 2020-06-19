@@ -1,1 +1,35 @@
-<p>admin-products works!</p>
+<div class="add-new-product-btn">
+  <button class="btn btn-primary">New Product</button>
+</div>
+<div class="form-group">
+  <input
+    type="text"
+    placeholder="Search..."
+    class="form-control"
+    id="exampleInputEmail1"
+    aria-describedby="emailHelp"
+  />
+</div>
+<div>
+  <div *ngFor="let number of numbers">
+    {{ number }}
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Price</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>1</td>
+        <td>{{ product.name }}</td>
+        <td>${{ product.price }}</td>
+        <td><a href="">Edit</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
