@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { AppUser } from '../models/app-user';
 
 @Component({
-    selector: 'app-nav-bar',
-    templateUrl: './nav-bar.component.html',
-    styleUrls: ['./nav-bar.component.css']
+  selector: 'app-nav-bar',
+  templateUrl: './nav-bar.component.html',
+  styleUrls: ['./nav-bar.component.css'],
 })
-
 export class NavBarComponent implements OnInit {
-    user$;
-    constructor(private authService: AuthService) { }
+  appUser: AppUser;
+  constructor(private authService: AuthService) {
+    authService.appUser$.subscribe((appUser) => (this.appUser = appUser));
+  }
 
-    ngOnInit() {
-        this.user$ = this.authService.user$;
-    }
+  ngOnInit() {}
 
-    logout() {
-        this.authService.doLogout();
-    }
+  logout() {
+    this.authService.logout();
+  }
 }
